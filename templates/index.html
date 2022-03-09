@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:wght@900&family=IBM+Plex+Sans+Thai:wght@100&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Clustering application</title>
+  </head>
+
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Thai', serif;
+      font-size: 14px;
+    }
+  </style>
+
+  <body>
+    <div class="top-heading">
+      <h2>
+        <img src="{{url_for('static', filename='logo.png')}}" width=50> Clustering
+      </h2>
+    </div>
+
+    <div class='outer'>
+      <div class='inner'>
+        <p>Set the input values predict a segment</p>
+
+        <form action='/predict' method='POST'>
+
+          <div class='input_area'>
+            <label for="feature_01">Feature #1</label>
+            <input type="number" id="feat_01" name="feature_01"
+                min="1" max="100"
+          </div>
+
+          <div class='input_area'>
+            <label for="feature_02">Feature #2</label>
+            <input type="number" id="feat_02" name="feature_02"
+                min="1" max="100"
+          </div>
+
+      </div>
+
+      <div style="width:700px;" id="container">
+        <div>
+          <button type="submit" class="btn" onClick="window.location.href='/predict'">
+            Predict now!
+          </button>
+        </div>
+      </div>
+
+      <p>
+        Author: Vytautas Bielinskas<br>
+        Stand with Ukraine!
+      </p>
+
+    </div>
+  </body>
+</html>
